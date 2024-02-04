@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JO-kEN-PO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header/header.css">
+    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="footer/footer.css">
+</head>
+<body>
+    <header>
+        
+    </header>
+
+    <main class="container">
+        <section class="border-screen">
+            <div class="screen">
+                <div id="screen-match" class="screen-match">
+                    <div class="player">
+                        <img id="imgPlayer" src="media/pedra_player.png" alt="Player Tesoura">
+                        <p>Player</p>
+                    </div>
+                    <div class="match-line">
+
+                    </div>
+                    <div class="cpu">
+                        <img id="imgCPU" src="media/pedra_player.png" alt="CPU Pedra">
+                        <p>CPU</p>
+                    </div>
+                </div>
+                <div class="screen-info">
+                </div>
+            </div>
+        </section>
+        <section class="navigation">
+            <ul>
+                <li class="list-active">
+                    <a href="#">
+                        <span class="icon">
+                        <ion-icon id="pedra" class="icon-selected" name="cube-outline"></ion-icon>
+                        </span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span  class="icon">
+                            <ion-icon id="papel" class="icon-selected" name="document-outline"></ion-icon>
+                        </span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon id="tesoura" class="icon-selected" name="cut-outline"></ion-icon>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Project created by <a href="#">Ícaro Carvalho</a></p>
+    </footer>
+
+    <script src="main/navigation.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

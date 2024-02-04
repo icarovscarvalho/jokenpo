@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --linkClr: #ff4500;
+    --baseClr: #fff;
+    --unbaseClr: #000;
+    --bgClr: #363433;
+    --metalLightClr: #ececec;
+    --metalMediumClr: #a0a0a0;
+    --metalDarkClr: #707070;
+    --screenLightClr: #8ad4ff;
+    --screenMediumClr: #64c6ff;
+    --screenDarkClr: #5dc3ff;
+    --buttonLightClr: #5cc25c;
+    --buttonMediumClr: #39c539;
+    --buttonDarkClr: #1ba51b;
+}
+
+@keyframes jukenmovimentplayer {
+    15% {
+            transform: translateY(-30px);
+    }
+
+    30% {
+            transform: translateY(30px);
+    }
+
+    45% {
+            transform: translateY(-30px);
+    }
+
+    60% {
+            transform: translateY(30px);
+    }
+
+    75% {
+            transform: translateY(-30px);
+    }
+
+    100% {
+            transform: translateY(30px);
+    }
+}
+@keyframes jukenmovimentcpu {
+    15% {
+            transform: translateY(-30px) scaleX(-1);
+    }
+
+    30% {
+            transform: translateY(30px) scaleX(-1);
+    }
+
+    45% {
+            transform: translateY(-30px) scaleX(-1);
+    }
+
+    60% {
+            transform: translateY(30px) scaleX(-1);
+    }
+
+    75% {
+            transform: translateY(-30px) scaleX(-1);
+    }
+
+    100% {
+            transform: translateY(30px) scaleX(-1);
+    }
+}
+
+.jokenpo-move-player {
+    animation: jukenmovimentplayer 2s linear;
+}
+
+.jokenpo-move-cpu {
+    animation: jukenmovimentcpu 2s linear;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 85%;
+
+    background-color: var(--bgClr);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px var(--unbaseClr);
+
+    .border-screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40rem;
+        height: 20rem;
+
+        background-color: var(--metalMediumClr);
+        border-radius: 5px;
+        border-top: 3px solid var(--metalLightClr);
+        border-bottom: 5px solid var(--metalDarkClr);
+
+        .screen {
+            width: 39rem;
+            height: 19rem;
+
+            background: linear-gradient(45deg, var(--screenMediumClr), var(--screenLightClr));
+            border-radius: 3px;
+            border-top: 10px solid var(--screenLightClr);
+            border-bottom: 10px solid var(--screenDarkClr);
+
+            .screen-match {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                column-gap: 50px;
+
+                height: 100%;
+
+                .player {
+                    img {
+                        width: 200px;
+                    }
+
+                    p {
+                        font-family: 'Press Start 2P', system-ui;
+                        color: var(--baseClr);
+                    }
+                }
+
+                .match-line {
+                    background-color: var(--baseClr);
+                    border: 2px solid #3b3b3b;
+                    height: 80%;
+                    width: 10px;
+                }
+
+                .cpu {
+                    img {
+                        width: 200px;
+                        transform: scaleX(-1);
+                    }
+
+                    p {
+                        font-family: 'Press Start 2P', system-ui;
+                        color: var(--baseClr);
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation {
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            column-gap: 20px;
+            padding: 10px;
+
+            background-color: var(--baseClr);
+            border-radius: 0px 0px 10px 10px;
+
+            ion-icon {
+                font-size: 30px;
+                background-color: var(--baseClr);
+                border-radius: 50%;
+                padding: 3px;
+                color: var(--bgClr);
+            }
+
+            .icon-selected:active {
+                font-size: 30px;
+                background-color: var(--buttonLightClr);
+                border-radius: 50%;
+                padding: 3px;
+                color: var(--baseClr);
+            }
+        }
+    }
+}

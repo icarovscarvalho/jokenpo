@@ -1,0 +1,13 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 3rem;
+  background-color: #000;
+  color: #fff;
+}
+footer p a {
+  text-decoration: none;
+  color: #ff4500;
+}/*# sourceMappingURL=footer.css.map */

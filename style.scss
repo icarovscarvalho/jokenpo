@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$linkClr: #ff4500;
+$baseClr: #fff;
+$unbaseClr: #000;
+$bgClr: #e2f5f8;
+$metalLightClr: #ececec;
+$metalMediumClr: #a0a0a0;
+$metalDarkClr: #707070;
+$screenLightClr: #8ad4ff;
+$screenMediumClr: #64c6ff;
+$screenDarkClr: #1dacff;
+$buttonLightClr: #5cc25c;
+$buttonMediumClr: #39c539;
+$buttonDarkClr: #1ba51b;
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    background-color: $baseClr;
+}
