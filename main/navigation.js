@@ -1,13 +1,13 @@
 //VERIFICAR REMOÇÂO DA DIV
 const imgTagPlayer = document.getElementById("imgPlayer");
 const imgTagCPU = document.getElementById("imgCPU");
-const screenMatch = document.getElementById("screen-match");
 const iconNavPedra = document.getElementById('pedra');
 const iconNavPapel = document.getElementById('papel');
 const iconNavTesoura = document.getElementById('tesoura');
 
-function junKenPo(id) {
-    domElements[id].classList.add(`jokenpo-move-${id}`);
+const score = {
+    player: 0,
+    cpu: 0
 }
 
 const tagchoice = {
@@ -21,6 +21,12 @@ const domElements = {
     cpu: imgTagCPU,
 }
 
+function junKenPo(id) {
+    domElements[id].classList.add(`jokenpo-move-${id}`);
+}
+
+
+
 function changeImgPlayer(choice, id) {
     domElements[id].src = tagchoice[choice]
     domElements[id].alt = "Jogada do Player"
@@ -28,14 +34,14 @@ function changeImgPlayer(choice, id) {
 
 function handlePlay(choice, id) {
     id === "player" && handlePlay(cpuTurn(), "cpu")
+    domElements[id].setAttribute("data-choice", choice)
     junKenPo(id)
     changeImgPlayer("pedra", id)
     setTimeout(() => {
         domElements[id].classList.remove(`jokenpo-move-${id}`)
-        domElements[id].setAttribute("data-choice", choice)
-        id === "cpu" && setScore()
         changeImgPlayer(choice, id)
-    },2000)
+        id === "cpu" && setScore()
+    }, 2000)
 }
 
 //#PEDRA __________________________________________________
@@ -47,7 +53,7 @@ iconNavPedra.onclick = () => {
 //#PAPEL __________________________________________________
 
 iconNavPapel.onclick = () => {
-    handlePlay("papel","player")
+    handlePlay("papel", "player")
 }
 
 //#TESOURA __________________________________________________
@@ -65,6 +71,19 @@ function cpuTurn() {
 function setScore() {
     const playerChoice = domElements.player.dataset.choice
     const cpuChoice = domElements.cpu.dataset.choice
-    console.log(playerChoice)
-    console.log(cpuChoice)
+    switch (playerChoice){
+        case "pedra":
+            cpuChoice === "papel" && score.cpu++
+            cpuChoice === "tesoura" && score.player++
+            break
+        case "papel":
+            cpuChoice === "pedra" && score.player++
+            cpuChoice === "tesoura" && score.cpu++
+            break
+        case "tesoura":
+            cpuChoice === "pedra" && score.cpu++
+            cpuChoice === "papel" && score.player++
+            break
+    }
+    console.table(score)
 }
