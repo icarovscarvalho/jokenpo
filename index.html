@@ -15,19 +15,32 @@
     </header>
 
     <main class="container">
+        <div class="title">
+            <h1>
+                <p class="title.box_1">JO</p>
+                <p class="title.box_2">KEN</p>
+                <p class="title.box_3">PO</p>
+            </h1>
+        </div>
         <section class="border-screen">
             <div class="screen">
                 <div id="screen-match" class="screen-match">
                     <div class="player">
                         <img id="imgPlayer" src="media/pedra_player.png" alt="Player Tesoura">
-                        <p>Player</p>
+                        <div class="placar-player">
+                            <p>Player =</p>
+                            <p id="player-score">(0)</p>
+                        </div>
                     </div>
-                    <div class="match-line">
 
-                    </div>
+                    <div class="match-line"></div>
+
                     <div class="cpu">
                         <img id="imgCPU" src="media/pedra_player.png" alt="CPU Pedra">
-                        <p>CPU</p>
+                        <div class="placar-cpu">
+                            <p id="cpu-score">(0)</p>
+                            <p>= CPU</p>
+                        </div>
                     </div>
                 </div>
                 <div class="screen-info">

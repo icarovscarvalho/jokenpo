@@ -75,6 +75,16 @@
     animation: jukenmovimentcpu 2s linear;
 }
 
+.placar-player {
+    display: flex;
+    gap: 10px;
+}
+
+.placar-cpu {
+    display: flex;
+    gap: 10px;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -86,6 +96,32 @@ main {
     background-color: var(--bgClr);
     border-radius: 5px;
     box-shadow: 0px 0px 10px var(--unbaseClr);
+
+    .title {
+        background-color: transparent;
+        margin-bottom: 40px;
+    }
+
+    .title h1{
+        font-family: 'Press Start 2P', system-ui;
+        display: flex;
+    }
+
+    .title p:first-child {
+        color: #cc0000;
+        margin-right: 30px;
+    }
+
+    .title p:nth-child(2) {
+        color: #ffe600;
+        margin-top: 30px;
+        margin-right: 30px;
+    }
+
+    .title p:last-child {
+        color: #00a500;
+        margin-top: 60px;
+    }
 
     .border-screen {
         display: flex;
@@ -119,7 +155,10 @@ main {
 
                 .player {
                     img {
-                        width: 200px;
+                        min-width: 200px;
+                        max-width: 200px;
+                        min-height: 200px;
+                        max-height: 200px;
                     }
 
                     p {
@@ -137,14 +176,16 @@ main {
 
                 .cpu {
                     img {
-                        width: 200px;
+                        min-width: 200px;
+                        max-width: 200px;
+                        min-height: 200px;
+                        max-height: 200px;
                         transform: scaleX(-1);
                     }
 
                     p {
                         font-family: 'Press Start 2P', system-ui;
                         color: var(--baseClr);
-                        text-align: right;
                     }
                 }
             }
