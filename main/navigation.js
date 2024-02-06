@@ -1,4 +1,28 @@
-//VERIFICAR REMOÇÂO DA DIV
+// # MENU SCREEN
+
+const menuChoices = document.getElementById("menu-choices");
+const navigation_ul = document.getElementById("navigation-ul");
+const menuChoice_3R = document.getElementById("menuChoice_3R");
+const menuChoice_5R = document.getElementById("menuChoice_5R");
+const menuChoice_FM = document.getElementById("menuChoice_FM");
+const mainScreenGame = document.getElementById("border-screen");
+
+function menuChoice_3R_Function() {
+    menuChoices.style.display = "none";
+    mainScreenGame.style.display = "flex";
+    navigation_ul.style.display = "flex";
+    endGameValue = 3;
+}
+
+function endGame_Function() {
+    menuChoices.style.display = "flex";
+    mainScreenGame.style.display = "none";
+    navigation_ul.style.display = "none";
+}
+
+//______________________________________________________________
+
+// # MAIN GAME
 const imgTagPlayer = document.getElementById("imgPlayer");
 const imgTagCPU = document.getElementById("imgCPU");
 const iconNavPedra = document.getElementById('pedra');
@@ -91,4 +115,15 @@ function setScore() {
     console.table(score)
     playerScore.innerText = `(${score.player})`;
     cpuScore.innerText = `(${score.cpu})`;
+
+    console.log(score.player)
+    console.log(score.cpu)
+
+    if (score.player === 3 || score.cpu === 3) {
+        score.player = 0;
+        score.cpu = 0;
+        playerScore.innerText = `(${score.player})`;
+        cpuScore.innerText = `(${score.cpu})`;
+        endGame_Function()
+    }
 }
