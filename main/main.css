@@ -123,8 +123,25 @@ main {
         margin-top: 60px;
     }
 
-    .border-screen {
+    .menu-choices {
+        width: 20rem;
+        height: 30rem;
+        background-color: var(--screenLightClr);
+
         display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .menu-choices h2 {
+        font-family: 'Press Start 2P', system-ui;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .border-screen {
+        display: none;
         justify-content: center;
         align-items: center;
         width: 40rem;
