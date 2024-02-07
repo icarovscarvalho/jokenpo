@@ -6,6 +6,8 @@ const menuChoice_3R = document.getElementById("menuChoice_3R");
 const menuChoice_5R = document.getElementById("menuChoice_5R");
 const menuChoice_FM = document.getElementById("menuChoice_FM");
 const mainScreenGame = document.getElementById("border-screen");
+const endScreen = document.getElementById("end-screen");
+const endGameDiv = document.getElementById("end-screen-div");
 
 function menuChoice_3R_Function() {
     menuChoices.style.display = "none";
@@ -28,9 +30,17 @@ function menuChoice_FM_Function() {
 }
 
 function endGame_Function() {
+    menuChoices.style.display = "none";
+    mainScreenGame.style.display = "none";
+    navigation_ul.style.display = "none";
+    endScreen.style.display = "flex";
+}
+
+function returnMenu() {
     menuChoices.style.display = "flex";
     mainScreenGame.style.display = "none";
     navigation_ul.style.display = "none";
+    endScreen.style.display = "none";
 }
 
 //______________________________________________________________
@@ -140,6 +150,11 @@ function setScore() {
                 playerScore.innerText = `(${score.player})`;
                 cpuScore.innerText = `(${score.cpu})`;
                 endGame_Function()
+                if (score.player <= score.cpu) {
+                    endGameDiv.style.backgroundImage = "url('../media/you_lose_bg.png')"
+                } else {
+                    endGameDiv.style.backgroundImage = "url('../media/win_bg.jpg')"
+                }
             }
             break
         case 5:
@@ -149,6 +164,11 @@ function setScore() {
                 playerScore.innerText = `(${score.player})`;
                 cpuScore.innerText = `(${score.cpu})`;
                 endGame_Function()
+                if (score.player <= score.cpu) {
+                    endGameDiv.style.backgroundImage = "url('../media/you_lose_bg.png')"
+                } else {
+                    endGameDiv.style.backgroundImage = "url('../media/win_bg.jpg')"
+                }
             }
             break
         default:

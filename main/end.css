@@ -31,7 +31,49 @@
     }
 }
 
-.end-screen {
-    display: none;
+#end-screen {
+    width: 20rem;
+    height: 30rem;
     background-color: var(--screenLightClr);
+    border-radius: 10px;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 80px;
+
+    @media (max-width:600px) {
+        row-gap: 20px;
+        width: 15rem;
+        height: 20rem;
+    }
+}
+
+.end-screen-div {
+    width: 20rem;
+    height: 10em;
+    overflow: hidden;
+    background: url(../media/you_lose_bg.png) center center no-repeat;
+    background-size: cover;
+
+    @media (max-width:600px) {
+        width: 15rem;
+        height: 10rem;
+    }
+}
+
+#end-screen h2 {
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 1.3rem;
+
+    @media (max-width:600px) {
+        font-size: .7rem;
+    }
+}
+
+#end-screen p {
+    @media (max-width:600px) {
+        font-size: .7rem;
+    }
 }
