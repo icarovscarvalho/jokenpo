@@ -14,6 +14,19 @@ function menuChoice_3R_Function() {
     endGameValue = 3;
 }
 
+function menuChoice_5R_Function() {
+    menuChoices.style.display = "none";
+    mainScreenGame.style.display = "flex";
+    navigation_ul.style.display = "flex";
+    endGameValue = 5;
+}
+
+function menuChoice_FM_Function() {
+    menuChoices.style.display = "none";
+    mainScreenGame.style.display = "flex";
+    navigation_ul.style.display = "flex";
+}
+
 function endGame_Function() {
     menuChoices.style.display = "flex";
     mainScreenGame.style.display = "none";
@@ -119,11 +132,26 @@ function setScore() {
     console.log(score.player)
     console.log(score.cpu)
 
-    if (score.player === 3 || score.cpu === 3) {
-        score.player = 0;
-        score.cpu = 0;
-        playerScore.innerText = `(${score.player})`;
-        cpuScore.innerText = `(${score.cpu})`;
-        endGame_Function()
+    switch (endGameValue) {
+        case 3:
+            if (score.player === 3 || score.cpu === 3) {
+                score.player = 0;
+                score.cpu = 0;
+                playerScore.innerText = `(${score.player})`;
+                cpuScore.innerText = `(${score.cpu})`;
+                endGame_Function()
+            }
+            break
+        case 5:
+            if (score.player === 5 || score.cpu === 5) {
+                score.player = 0;
+                score.cpu = 0;
+                playerScore.innerText = `(${score.player})`;
+                cpuScore.innerText = `(${score.cpu})`;
+                endGame_Function()
+            }
+            break
+        default:
+            return
     }
 }
