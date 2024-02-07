@@ -2,12 +2,13 @@
 
 const menuChoices = document.getElementById("menu-choices");
 const navigation_ul = document.getElementById("navigation-ul");
-const menuChoice_3R = document.getElementById("menuChoice_3R");
-const menuChoice_5R = document.getElementById("menuChoice_5R");
-const menuChoice_FM = document.getElementById("menuChoice_FM");
+// const menuChoice_3R = document.getElementById("menuChoice_3R");
+// const menuChoice_5R = document.getElementById("menuChoice_5R");
+// const menuChoice_FM = document.getElementById("menuChoice_FM");
 const mainScreenGame = document.getElementById("border-screen");
 const endScreen = document.getElementById("end-screen");
 const endGameDiv = document.getElementById("end-screen-div");
+let endGame = 0;
 
 function menuChoice_3R_Function() {
     menuChoices.style.display = "none";
